@@ -1,0 +1,751 @@
+25.04.2024 08-45-00 ERROR /home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/django/utils/log.py Internal Server Error: /news/ (<class 'django.template.exceptions.TemplateSyntaxError'>, TemplateSyntaxError("Invalid block tag on line 48: 'get_avaliable_languages', expected 'endcache'. Did you forget to register or load this tag?"), <traceback object at 0x7f2f6a6487c0>)
+Traceback (most recent call last):
+  File "/home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/django/template/base.py", line 502, in parse
+    compile_func = self.tags[command]
+                   ~~~~~~~~~^^^^^^^^^
+KeyError: 'get_avaliable_languages'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+               ^^^^^^^^^^^^^^^^^
+  File "/home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/django/template/response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/django/template/base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/django/template/loader_tags.py", line 134, in render
+    compiled_parent = self.get_parent(context)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/django/template/loader_tags.py", line 131, in get_parent
+    return self.find_template(parent, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/django/template/loader_tags.py", line 109, in find_template
+    template, origin = context.template.engine.find_template(
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/django/template/engine.py", line 157, in find_template
+    template = loader.get_template(name, skip=skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/django/template/loaders/cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/django/template/loaders/base.py", line 28, in get_template
+    return Template(
+           ^^^^^^^^^
+  File "/home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/django/template/base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/django/template/base.py", line 196, in compile_nodelist
+    return parser.parse()
+           ^^^^^^^^^^^^^^
+  File "/home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/django/template/base.py", line 510, in parse
+    raise self.error(token, e)
+  File "/home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/django/template/base.py", line 508, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/django/templatetags/cache.py", line 84, in do_cache
+    nodelist = parser.parse(("endcache",))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/django/template/base.py", line 504, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "/home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/django/template/base.py", line 555, in invalid_block_tag
+    raise self.error(
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 48: 'get_avaliable_languages', expected 'endcache'. Did you forget to register or load this tag?
+25.04.2024 08-45-00 ERROR /home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/django/core/servers/basehttp.py "GET /news/ HTTP/1.1" 500 214192 None
+25.04.2024 08-45-48 ERROR /home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/django/utils/log.py Internal Server Error: /news/ (<class 'django.template.exceptions.TemplateSyntaxError'>, TemplateSyntaxError("Invalid block tag on line 49: 'get_avaliable_languages'. Did you forget to register or load this tag?"), <traceback object at 0x7f2f6a6a5c00>)
+Traceback (most recent call last):
+  File "/home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/django/template/base.py", line 502, in parse
+    compile_func = self.tags[command]
+                   ~~~~~~~~~^^^^^^^^^
+KeyError: 'get_avaliable_languages'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+               ^^^^^^^^^^^^^^^^^
+  File "/home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/django/template/response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/django/template/base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/django/template/loader_tags.py", line 134, in render
+    compiled_parent = self.get_parent(context)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/django/template/loader_tags.py", line 131, in get_parent
+    return self.find_template(parent, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/django/template/loader_tags.py", line 109, in find_template
+    template, origin = context.template.engine.find_template(
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/django/template/engine.py", line 157, in find_template
+    template = loader.get_template(name, skip=skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/django/template/loaders/cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/django/template/loaders/base.py", line 28, in get_template
+    return Template(
+           ^^^^^^^^^
+  File "/home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/django/template/base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/django/template/base.py", line 196, in compile_nodelist
+    return parser.parse()
+           ^^^^^^^^^^^^^^
+  File "/home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/django/template/base.py", line 504, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "/home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/django/template/base.py", line 565, in invalid_block_tag
+    raise self.error(
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 49: 'get_avaliable_languages'. Did you forget to register or load this tag?
+25.04.2024 08-45-48 ERROR /home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/django/core/servers/basehttp.py "GET /news/ HTTP/1.1" 500 194961 None
+25.04.2024 08-48-14 ERROR /home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/django/utils/log.py Internal Server Error: /news/ (<class 'django.template.exceptions.TemplateSyntaxError'>, TemplateSyntaxError("Invalid block tag on line 49: 'get_avaliable_languages'. Did you forget to register or load this tag?"), <traceback object at 0x7fc345410e00>)
+Traceback (most recent call last):
+  File "/home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/django/template/base.py", line 502, in parse
+    compile_func = self.tags[command]
+                   ~~~~~~~~~^^^^^^^^^
+KeyError: 'get_avaliable_languages'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+               ^^^^^^^^^^^^^^^^^
+  File "/home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/django/template/response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/django/template/base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/django/template/loader_tags.py", line 134, in render
+    compiled_parent = self.get_parent(context)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/django/template/loader_tags.py", line 131, in get_parent
+    return self.find_template(parent, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/django/template/loader_tags.py", line 109, in find_template
+    template, origin = context.template.engine.find_template(
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/django/template/engine.py", line 157, in find_template
+    template = loader.get_template(name, skip=skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/django/template/loaders/cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/django/template/loaders/base.py", line 28, in get_template
+    return Template(
+           ^^^^^^^^^
+  File "/home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/django/template/base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/django/template/base.py", line 196, in compile_nodelist
+    return parser.parse()
+           ^^^^^^^^^^^^^^
+  File "/home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/django/template/base.py", line 504, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "/home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/django/template/base.py", line 565, in invalid_block_tag
+    raise self.error(
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 49: 'get_avaliable_languages'. Did you forget to register or load this tag?
+25.04.2024 08-48-14 ERROR /home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/django/core/servers/basehttp.py "GET /news/ HTTP/1.1" 500 195092 None
+25.04.2024 08-48-16 ERROR /home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/django/utils/log.py Internal Server Error: /accounts/login/ (<class 'django.template.exceptions.TemplateSyntaxError'>, TemplateSyntaxError("Invalid block tag on line 49: 'get_avaliable_languages'. Did you forget to register or load this tag?"), <traceback object at 0x7fc345467240>)
+Traceback (most recent call last):
+  File "/home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/django/template/base.py", line 502, in parse
+    compile_func = self.tags[command]
+                   ~~~~~~~~~^^^^^^^^^
+KeyError: 'get_avaliable_languages'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+               ^^^^^^^^^^^^^^^^^
+  File "/home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/django/template/response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/django/template/base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/django/template/loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/django/template/base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/django/template/loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/django/template/base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/django/template/loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/django/template/base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/django/template/loader_tags.py", line 134, in render
+    compiled_parent = self.get_parent(context)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/django/template/loader_tags.py", line 131, in get_parent
+    return self.find_template(parent, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/django/template/loader_tags.py", line 109, in find_template
+    template, origin = context.template.engine.find_template(
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/django/template/engine.py", line 157, in find_template
+    template = loader.get_template(name, skip=skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/django/template/loaders/cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/django/template/loaders/base.py", line 28, in get_template
+    return Template(
+           ^^^^^^^^^
+  File "/home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/django/template/base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/django/template/base.py", line 196, in compile_nodelist
+    return parser.parse()
+           ^^^^^^^^^^^^^^
+  File "/home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/django/template/base.py", line 504, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "/home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/django/template/base.py", line 565, in invalid_block_tag
+    raise self.error(
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 49: 'get_avaliable_languages'. Did you forget to register or load this tag?
+25.04.2024 08-48-16 ERROR /home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/django/core/servers/basehttp.py "GET /accounts/login/?next=/news/profile/ HTTP/1.1" 500 245968 None
+25.04.2024 08-51-22 ERROR /home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/django/utils/log.py Internal Server Error: /accounts/login/ (<class 'django.template.exceptions.TemplateSyntaxError'>, TemplateSyntaxError("Invalid block tag on line 49: 'get_avaliable_languages'. Did you forget to register or load this tag?"), <traceback object at 0x7fb3f439c4c0>)
+Traceback (most recent call last):
+  File "/home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/django/template/base.py", line 502, in parse
+    compile_func = self.tags[command]
+                   ~~~~~~~~~^^^^^^^^^
+KeyError: 'get_avaliable_languages'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+               ^^^^^^^^^^^^^^^^^
+  File "/home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/django/template/response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/django/template/base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/django/template/loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/django/template/base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/django/template/loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/django/template/base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/django/template/loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/django/template/base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/django/template/loader_tags.py", line 134, in render
+    compiled_parent = self.get_parent(context)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/django/template/loader_tags.py", line 131, in get_parent
+    return self.find_template(parent, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/django/template/loader_tags.py", line 109, in find_template
+    template, origin = context.template.engine.find_template(
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/django/template/engine.py", line 157, in find_template
+    template = loader.get_template(name, skip=skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/django/template/loaders/cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/django/template/loaders/base.py", line 28, in get_template
+    return Template(
+           ^^^^^^^^^
+  File "/home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/django/template/base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/django/template/base.py", line 196, in compile_nodelist
+    return parser.parse()
+           ^^^^^^^^^^^^^^
+  File "/home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/django/template/base.py", line 504, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "/home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/django/template/base.py", line 565, in invalid_block_tag
+    raise self.error(
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 49: 'get_avaliable_languages'. Did you forget to register or load this tag?
+25.04.2024 08-51-22 ERROR /home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/django/core/servers/basehttp.py "GET /accounts/login/?next=/news/profile/ HTTP/1.1" 500 245968 None
+25.04.2024 08-51-32 ERROR /home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/django/utils/log.py Internal Server Error: /news/ (<class 'django.template.exceptions.TemplateSyntaxError'>, TemplateSyntaxError("Invalid block tag on line 49: 'get_avaliable_languages'. Did you forget to register or load this tag?"), <traceback object at 0x7fb3f449b440>)
+Traceback (most recent call last):
+  File "/home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/django/template/base.py", line 502, in parse
+    compile_func = self.tags[command]
+                   ~~~~~~~~~^^^^^^^^^
+KeyError: 'get_avaliable_languages'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+               ^^^^^^^^^^^^^^^^^
+  File "/home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/django/template/response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/django/template/base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/django/template/loader_tags.py", line 134, in render
+    compiled_parent = self.get_parent(context)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/django/template/loader_tags.py", line 131, in get_parent
+    return self.find_template(parent, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/django/template/loader_tags.py", line 109, in find_template
+    template, origin = context.template.engine.find_template(
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/django/template/engine.py", line 157, in find_template
+    template = loader.get_template(name, skip=skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/django/template/loaders/cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/django/template/loaders/base.py", line 28, in get_template
+    return Template(
+           ^^^^^^^^^
+  File "/home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/django/template/base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/django/template/base.py", line 196, in compile_nodelist
+    return parser.parse()
+           ^^^^^^^^^^^^^^
+  File "/home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/django/template/base.py", line 504, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "/home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/django/template/base.py", line 565, in invalid_block_tag
+    raise self.error(
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 49: 'get_avaliable_languages'. Did you forget to register or load this tag?
+25.04.2024 08-51-32 ERROR /home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/django/core/servers/basehttp.py "GET /news/ HTTP/1.1" 500 194906 None
+25.04.2024 08-58-13 ERROR /home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/django/utils/log.py Internal Server Error: /news/ (<class 'django.template.exceptions.TemplateSyntaxError'>, TemplateSyntaxError('Unknown argument for \'trans\' tag: \'новость\'. The only options available are \'noop\', \'context\' "xxx", and \'as VAR\'.'), <traceback object at 0x7f55b573c680>)
+Traceback (most recent call last):
+  File "/home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+               ^^^^^^^^^^^^^^^^^
+  File "/home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/django/template/response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/django/template/base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/django/template/loader_tags.py", line 134, in render
+    compiled_parent = self.get_parent(context)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/django/template/loader_tags.py", line 131, in get_parent
+    return self.find_template(parent, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/django/template/loader_tags.py", line 109, in find_template
+    template, origin = context.template.engine.find_template(
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/django/template/engine.py", line 157, in find_template
+    template = loader.get_template(name, skip=skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/django/template/loaders/cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/django/template/loaders/base.py", line 28, in get_template
+    return Template(
+           ^^^^^^^^^
+  File "/home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/django/template/base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/django/template/base.py", line 196, in compile_nodelist
+    return parser.parse()
+           ^^^^^^^^^^^^^^
+  File "/home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/django/template/base.py", line 510, in parse
+    raise self.error(token, e)
+  File "/home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/django/template/base.py", line 508, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/django/templatetags/cache.py", line 84, in do_cache
+    nodelist = parser.parse(("endcache",))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/django/template/base.py", line 510, in parse
+    raise self.error(token, e)
+  File "/home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/django/template/base.py", line 508, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/django/templatetags/i18n.py", line 443, in do_translate
+    raise TemplateSyntaxError(
+django.template.exceptions.TemplateSyntaxError: Unknown argument for 'trans' tag: 'новость'. The only options available are 'noop', 'context' "xxx", and 'as VAR'.
+25.04.2024 08-58-14 ERROR /home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/django/core/servers/basehttp.py "GET /news/ HTTP/1.1" 500 219215 None
+25.04.2024 09-06-25 ERROR /home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/django/utils/log.py Internal Server Error: /articles/ (<class 'django.template.exceptions.TemplateSyntaxError'>, TemplateSyntaxError('Invalid block tag on line 36: \'trans"Добавить\', expected \'endcache\'. Did you forget to register or load this tag?'), <traceback object at 0x7fd5fe993d00>)
+Traceback (most recent call last):
+  File "/home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/django/template/base.py", line 502, in parse
+    compile_func = self.tags[command]
+                   ~~~~~~~~~^^^^^^^^^
+KeyError: 'trans"Добавить'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+               ^^^^^^^^^^^^^^^^^
+  File "/home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/django/template/response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/django/template/base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/django/template/loader_tags.py", line 134, in render
+    compiled_parent = self.get_parent(context)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/django/template/loader_tags.py", line 131, in get_parent
+    return self.find_template(parent, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/django/template/loader_tags.py", line 109, in find_template
+    template, origin = context.template.engine.find_template(
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/django/template/engine.py", line 157, in find_template
+    template = loader.get_template(name, skip=skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/django/template/loaders/cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/django/template/loaders/base.py", line 28, in get_template
+    return Template(
+           ^^^^^^^^^
+  File "/home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/django/template/base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/django/template/base.py", line 196, in compile_nodelist
+    return parser.parse()
+           ^^^^^^^^^^^^^^
+  File "/home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/django/template/base.py", line 510, in parse
+    raise self.error(token, e)
+  File "/home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/django/template/base.py", line 508, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/django/templatetags/cache.py", line 84, in do_cache
+    nodelist = parser.parse(("endcache",))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/django/template/base.py", line 504, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "/home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/django/template/base.py", line 555, in invalid_block_tag
+    raise self.error(
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 36: 'trans"Добавить', expected 'endcache'. Did you forget to register or load this tag?
+25.04.2024 09-06-25 ERROR /home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/django/core/servers/basehttp.py "GET /articles/ HTTP/1.1" 500 222781 None
+25.04.2024 09-07-04 ERROR /home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/django/utils/log.py Internal Server Error: /articles/ (<class 'django.template.exceptions.TemplateSyntaxError'>, TemplateSyntaxError('Invalid block tag on line 36: \'trans"Добавить\'. Did you forget to register or load this tag?'), <traceback object at 0x7fd5fdf0d480>)
+Traceback (most recent call last):
+  File "/home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/django/template/base.py", line 502, in parse
+    compile_func = self.tags[command]
+                   ~~~~~~~~~^^^^^^^^^
+KeyError: 'trans"Добавить'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+               ^^^^^^^^^^^^^^^^^
+  File "/home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/django/template/response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/django/template/base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/django/template/loader_tags.py", line 134, in render
+    compiled_parent = self.get_parent(context)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/django/template/loader_tags.py", line 131, in get_parent
+    return self.find_template(parent, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/django/template/loader_tags.py", line 109, in find_template
+    template, origin = context.template.engine.find_template(
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/django/template/engine.py", line 157, in find_template
+    template = loader.get_template(name, skip=skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/django/template/loaders/cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/django/template/loaders/base.py", line 28, in get_template
+    return Template(
+           ^^^^^^^^^
+  File "/home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/django/template/base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/django/template/base.py", line 196, in compile_nodelist
+    return parser.parse()
+           ^^^^^^^^^^^^^^
+  File "/home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/django/template/base.py", line 504, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "/home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/django/template/base.py", line 565, in invalid_block_tag
+    raise self.error(
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 36: 'trans"Добавить'. Did you forget to register or load this tag?
+25.04.2024 09-07-04 ERROR /home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/django/core/servers/basehttp.py "GET /articles/ HTTP/1.1" 500 202976 None
+29.04.2024 11-39-00 ERROR /home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/django/utils/log.py Internal Server Error: /api/v1/authors/ (<class 'django.core.exceptions.ImproperlyConfigured'>, ImproperlyConfigured('Field name `name` is not valid for model `Author` in `news.serializers.AuthorSerializer`.'), <traceback object at 0x7f30c993b240>)
+Traceback (most recent call last):
+  File "/home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/rest_framework/viewsets.py", line 124, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/rest_framework/mixins.py", line 43, in list
+    return self.get_paginated_response(serializer.data)
+                                       ^^^^^^^^^^^^^^^
+  File "/home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/rest_framework/serializers.py", line 795, in data
+    ret = super().data
+          ^^^^^^^^^^^^
+  File "/home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/rest_framework/serializers.py", line 249, in data
+    self._data = self.to_representation(self.instance)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/rest_framework/serializers.py", line 714, in to_representation
+    self.child.to_representation(item) for item in iterable
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/rest_framework/serializers.py", line 523, in to_representation
+    for field in fields:
+  File "/home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/rest_framework/serializers.py", line 384, in _readable_fields
+    for field in self.fields.values():
+                 ^^^^^^^^^^^
+  File "/home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/django/utils/functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "/home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/rest_framework/serializers.py", line 372, in fields
+    for key, value in self.get_fields().items():
+                      ^^^^^^^^^^^^^^^^^
+  File "/home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/rest_framework/serializers.py", line 1103, in get_fields
+    field_class, field_kwargs = self.build_field(
+                                ^^^^^^^^^^^^^^^^^
+  File "/home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/rest_framework/serializers.py", line 1249, in build_field
+    return self.build_unknown_field(field_name, model_class)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/rest_framework/serializers.py", line 1367, in build_unknown_field
+    raise ImproperlyConfigured(
+django.core.exceptions.ImproperlyConfigured: Field name `name` is not valid for model `Author` in `news.serializers.AuthorSerializer`.
+29.04.2024 11-39-00 ERROR /home/st0rmaen/Documents/Python_code/NewsPaper/.venv/lib64/python3.12/site-packages/django/core/servers/basehttp.py "GET /api/v1/authors/ HTTP/1.1" 500 151624 None

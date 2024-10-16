@@ -1,0 +1,61 @@
+{% extends 'flatpages/default.html' %}
+
+{% block title %}
+    Новости по категориям
+{% endblock title %}
+
+{% block content %}
+    {% if is_not_subscribed %}
+        <br>
+        <p class="text-center"><button class="btn btn-sm btn-dark"><a style="text-decoration: none; color: white" href="{% url "subscribe" category.id %}">Подписаться</a></button></p>
+    {% elif is_subscribed %}
+        <br>
+        <p class="text-center"><button class="btn btn-sm btn-dark"><a style="text-decoration: none; color: white" href="{% url "unsubscribe" category.id %}">Отписаться</a></button></p>
+    {% endif %}
+    {% if category_news_list %}
+        <div style="text-align: center">
+            <table style="display: inline-block">
+                <hr>
+                <h4>Всего новостей: {{ page_obj.paginator.count }}</h4>
+                <hr>
+                <tr>
+                    <td style="padding-inline: 5px">Дата публикации:</td>
+                    <td style="padding-inline: 5px">Категория:</td>
+                    <td style="padding-inline: 5px">Заголовок:</td>
+                    <td style="padding-inline: 5px">Содержание:</td>
+                </tr>
+                {% for post in category_news_list %}
+                    <tr>
+                        <td style="padding-inline: 5px">{{ post.date_published|date:'d.m.Y' }}</td>
+                        <td style="padding-inline: 5px">
+                            {% for cat in post.category.all %}
+                                <a href="{% url 'categories' cat.id %}">{{ cat.name }}</a>
+                            {% endfor %}
+                        </td>
+                        <td style="text-align: left; padding-inline: 5px"><a href="{{ post.pk }}">{{ post.title }}</a>
+                        </td>
+                        <td style="text-align: left; padding-inline: 5px">{{ post.text|truncatechars:20 }}</td>
+                    </tr>
+                {% endfor %}
+            </table>
+            <hr>
+        </div>
+    {% else %}
+        <h1>Пока нет публикаций :(</h1>
+    {% endif %}
+    {% if page_obj.has_previous %}
+        <a href="?page=1">1</a>
+        {% if page_obj.previous_page_number != 1 %}
+            ...
+            <a href="?page={{ page_obj.previous_page_number }}">{{ page_obj.previous_page_number }}</a>
+        {% endif %}
+    {% endif %}
+    {{ page_obj.number }}
+    {% if page_obj.has_next %}
+        <a href="?page={{ page_obj.next_page_number }}">{{ page_obj.next_page_number }}</a>
+        {% if paginator.num_pages != page_obj.next_page_number %}
+            ...
+            <a href="?page={{ page_obj.paginator.num_pages }}">{{ page_obj.paginator.num_pages }}</a>
+        {% endif %}
+    {% endif %}
+{% endblock content %}

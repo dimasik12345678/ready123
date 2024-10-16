@@ -1,0 +1,38 @@
+{% extends 'flatpages/default.html' %}
+
+{% load custom_filters %}
+
+{% block title %}
+    {{ post.title }}
+{% endblock title %}
+
+{% block content %}
+    {% if post %}
+        <hr>
+        <h4>{{ post.title }}</h4>
+        <p style="text-align: left">{{ post.text|censor }}</p>
+        <hr>
+        <div style="text-align: center">
+        <table style="display: inline-block">
+            <tr>
+                <td style="padding-inline: 5px">Категория:</td>
+                <td style="padding-inline: 5px">Дата публикации:</td>
+                <td style="padding-inline: 5px">Автор:</td>
+            </tr>
+            <tr>
+                <td>
+                    {% for cat in post.category.all %}
+                        {{ cat.name }}
+                    {% endfor %}
+                </td>
+                <td>{{ post.date_published|date:'d.m.Y' }}</td>
+                <td>{{ post.author.user.username }}</td>
+            </tr>
+        </table>
+        </div>
+        <hr>
+    {% else %}
+        <h1>Пока тут ничего нет :(</h1>
+    {% endif %}
+
+{% endblock content %}
